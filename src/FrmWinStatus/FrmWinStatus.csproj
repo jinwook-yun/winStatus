@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{71597C54-6AFA-4573-A418-2CF65524DA27}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>FrmWinStatus</RootNamespace>
+    <AssemblyName>FrmWinStatus</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>pie-chart.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Patch|AnyCPU'">
+    <OutputPath>bin\Patch\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DataBaseInfo">
+      <HintPath>..\Library\DataBaseInfo.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.BonusSkins.v19.1, Version=19.1.13.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.v19.1, Version=19.1.13.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v19.1.Core, Version=19.1.13.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v19.1, Version=19.1.13.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v19.1, Version=19.1.13.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v19.1, Version=19.1.13.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationClient" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WinStatusLib">
+      <HintPath>..\Library\WinStatusLib.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FrmWinStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmWinStatus.Designer.cs">
+      <DependentUpon>FrmWinStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmWinStatus.resx">
+      <DependentUpon>FrmWinStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="pie-chart.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FrmAfter\FrmAfter.csproj">
+      <Project>{72879166-9c7e-4e43-9f4d-bbaf2419e89c}</Project>
+      <Name>FrmAfter</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FrmBad\FrmBad.csproj">
+      <Project>{904e8333-0d09-4828-ba59-8e23c395bdde}</Project>
+      <Name>FrmBad</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FrmBIS\FrmBIS.csproj">
+      <Project>{9d416a48-0355-4c0b-9592-86c8e19eb600}</Project>
+      <Name>FrmBIS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FrmClaim\FrmClaim.csproj">
+      <Project>{2a191be3-e3d6-48cd-ad70-276ea21cbbde}</Project>
+      <Name>FrmClaim</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FrmFGscreen\FrmFGscreen.csproj">
+      <Project>{e72b435e-4d91-4d07-ac46-b20cb1fea369}</Project>
+      <Name>FrmFGscreen</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FrmOut\FrmOut.csproj">
+      <Project>{1eac78e3-f323-410c-a22b-253487a4b977}</Project>
+      <Name>FrmOut</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FrmPlanStock\FrmPlanStock.csproj">
+      <Project>{ff9f956f-daa5-4125-9152-3056ca50a029}</Project>
+      <Name>FrmPlanStock</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>if $(ConfigurationName) == Release (
+if not exist $(SolutionDir)\..\install\project mkdir $(SolutionDir)\..\install\project
+if not exist $(SolutionDir)\..\install\setupfile mkdir $(SolutionDir)\..\install\setupfile
+
+copy $(TargetDir)*.config $(SolutionDir)\..\install\project
+copy $(TargetDir)*.exe $(SolutionDir)\..\install\project
+copy $(TargetDir)*.dll $(SolutionDir)\..\install\project
+
+call $(SolutionDir)\..\install\Install.bat
+call $(SolutionDir)\..\install\Patch.bat
+
+del /s /q $(SolutionDir)\..\install\project\*.*
+)</PostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PreBuildEvent>if $(ConfigurationName) == Release (
+if not exist $(SolutionDir)\..\install\project mkdir $(SolutionDir)\..\install\project
+if not exist $(SolutionDir)\..\install\setupfile mkdir $(SolutionDir)\..\install\setupfile
+
+del /s /q $(SolutionDir)\..\install\project\*.*
+del /s /q $(SolutionDir)\..\install\setupfile\*.*
+)</PreBuildEvent>
+  </PropertyGroup>
+</Project>

@@ -1,0 +1,8 @@
+<APPLICATION>
+  <INFO>
+    <NAME>WinStatusBoard</NAME>
+    <VERSION>2.5.100</VERSION>
+    <SETUPFILE>WinStatusBoardSetup_v2.5.100.exe</SETUPFILE>
+    <PATCHFILE>WinStatusBoardPatch_v2.5.100.exe</PATCHFILE>
+  </INFO>
+</APPLICATION>
